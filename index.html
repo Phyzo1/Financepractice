@@ -1,0 +1,101 @@
+e 2<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/logos/spenderfin.png">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="css/content.css">
+  <title>SpenderFinance</title>
+</head>
+<body>
+  <div class="header">
+    <div>
+      <img src="/logos/spenderfin.png" class="logo" alt="logo">
+    </div>
+    <div>
+      <ul>
+        <li>
+          <a href="">Home</a>
+        </li>
+        <li>
+          <a href="">Finance Calculator</a>
+        </li>
+        <li>
+          <a href="">Loans</a>
+          <ul class="dropdown">
+            <li>
+              <a href="">Personal Loans</a>
+            </li>
+            <li>
+              <a href="">Company Loans</a>
+            </li>
+            <li>
+              <a href="">Car Finance</a>
+            </li>
+            <li>
+              <a href="">Loan for Bad Credit</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="">Help</a>
+          <ul class="dropdown">
+            <li>
+              <a href="">About Us</a>
+            </li>
+            <li>
+              <a href="">Contact Us</a>
+            </li>
+            <li>
+              <a href="">How We Work</a>
+            </li>
+            <li>
+              <a href="">Meet Our Expert</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="">CSR</a>
+        </li>
+      </ul>
+    </div>
+    <div class="login">
+      <a href="">Log in</a>
+    </div>
+  </div>
+  <h2>FINANCE MANAGEMENT</h2>
+  <section class="finance1">
+    <div class="balance">
+      <h3>YOUR BALANCE</h3>
+      <div class="balance-amount js-balance-amount">&#163; 0.00</div>
+    </div>
+    <section class="transactions">
+      <div class="income">
+        <h3>INCOME</h3>
+      <div class="transaction-income js-transaction-income">&#163; 0.00</div>
+      </div>
+      <div class="expenses">
+        <h3>EXPENSES</h3>
+      <div class="transaction-expenses js-transaction-expenses">&#163; 0.00</div>
+      </div>
+    </section>
+    <main class="added-transaction">
+      <p>Add new transaction</p>
+      <div class="item">
+        <p>Description</p>
+        <input type="text" placeholder="Enter item " class="input-item js-input-item">
+      </div>
+      <div class="amount">
+        <p>Amount</p>
+        <input type="text" placeholder="Enter amount" class="input-amount js-input-amount">
+      </div>
+      <button class="transaction-button js-transaction-button">Add Transaction</button>
+    </main>
+    <div class="list-item js-list-item"></div>
+  </section>
+
+  <script src="js/content.js"></script>
+</body>
+</html>
