@@ -9,23 +9,34 @@ const listItem = document.querySelector('.js-list-item');
 const financial = [];
 transactionButton.addEventListener('click', () => {
   addTransaction();
-  renderTransaction();
-  console.log(financial);
+  renderTransaction(); 
+  addAmount();
 })
 
-function addTransaction() {
-  const item = inputItem.value;
-  const amount = Number(inputAmount.value);
+function addAmount(amount) {
+const amounts = financial.map(finance => finance.amount);
 
-  financial.push({item, amount});
-};
+const totalbalance = amounts.reduce((acct, amount) => (acct += amount), 0).toFixed(2);
+balanceAmount.innerHTML = `&#163; ${totalbalance}`;
+
+const positiveAmount = amounts.filter(amount => amount > 0);
+const totalIncome = positiveAmount.reduce((acct, amount) => (acct +=amount), 0).toFixed(2);
+income.innerHTML = `&#163; ${totalIncome}`;
+
+const negativeAmount = amounts.filter(amount => amount < 0);
+const totalExpenses = negativeAmount.reduce((acct, amount) => (acct +=amount), 0).toFixed(2);
+expenses.innerHTML = `&#163; ${Math.abs(totalExpenses)}`;
+}
+ 
+
+Math.abs()
 
 function renderTransaction() {
   let html = '';
   for (i in financial) {
     const finObject = financial[i];
     const {item, amount} = finObject;
-    const sign = amount > 0 ? '' : '-';
+    // const sign = amount > 0 ? '' : '-';
    html += `
     <button class"">x</button>
     <div>${item}</div>
@@ -40,20 +51,22 @@ function renderTransaction() {
     // `;
     // listItem.appendChild(itam);
     listItem.innerHTML = html;
-  };
-}
-
-
-function addAmount({amount}) {
-  if (amount > 0) {
-    positiveAmount += amount;
-    console.log(positiveAmount);
-  }else if (amount < 0) {
-    negativeAmount -= {amount}
   }
-income.innerHTML = positiveAmount;
-expenses.innerHTML = negativeAmount;
 }
+
+function addTransaction() {
+  const item = inputItem.value;
+  const amount = Number(inputAmount.value);
+
+// const finance = {
+//     item: inputItem.value,
+//    amount: Number(inputAmount.value)
+//   }
+
+//   financial.push(finance);
+
+  financial.push({item, amount});
+};
 
 
 
